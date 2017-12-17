@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import com.ihognqiqu.wsp.R;
 
 
 /**
@@ -64,7 +65,7 @@ public class WebFragment extends Fragment {
         mWebView.setHorizontalScrollBarEnabled(false);
         // 垂直不显示
         mWebView.setVerticalScrollBarEnabled(false);
-        mWebView.setWebViewClient(new MyWebViewClient());
+        mWebView.setWebViewClient(new MyWebViewClient(getActivity()));
         mWebView.setWebChromeClient(new MyWebChromeClient(mListener));
         mWebView.getSettings().setUseWideViewPort(true);
         // 安全考虑，防止密码泄漏，尤其是root过的手机

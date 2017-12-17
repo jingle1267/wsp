@@ -1,8 +1,9 @@
 package com.ihongqiqu.webactivity.intercepter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.widget.Toast;
+import com.ihognqiqu.wsp.target.jianshu.JSConstants;
 
 /**
  * 拦截需要处理的url
@@ -12,15 +13,17 @@ import android.widget.Toast;
 
 public class FirstUrlHandler extends UrlHandler {
 
-    public FirstUrlHandler(Context context) {
+    public FirstUrlHandler(Activity context) {
         super(context);
     }
 
     @Override
-    public boolean handlerUrl(@NonNull String url) {
+    public String handlerUrl(@NonNull String url) {
         if (url.contains("http://ihongqiqu.com/archives/")) {
             Toast.makeText(mContext, url, Toast.LENGTH_SHORT).show();
-            return true;
+            return null;
+        } else if ("http://www.jianshu.com/".equalsIgnoreCase(url)) {
+            return JSConstants.JSDemoURL;
         }
         return super.handlerUrl(url);
     }

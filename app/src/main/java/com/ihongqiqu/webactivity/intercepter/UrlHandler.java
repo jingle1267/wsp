@@ -1,6 +1,6 @@
 package com.ihongqiqu.webactivity.intercepter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 
@@ -12,14 +12,14 @@ import android.support.annotation.NonNull;
 
 public abstract class UrlHandler {
 
-    protected Context mContext;
+    protected Activity mContext;
     private UrlHandler nextUrlHandler = null;
 
-    public UrlHandler(Context context) {
+    public UrlHandler(Activity context) {
         mContext = context;
     }
 
-    public void setContext(Context context) {
+    public void setContext(Activity context) {
         mContext = context;
     }
 
@@ -32,10 +32,10 @@ public abstract class UrlHandler {
     }
 
     @CallSuper
-    public boolean handlerUrl(@NonNull String url) {
+    public String handlerUrl(@NonNull String url) {
         if (getNextUrlHandler() != null) {
             return getNextUrlHandler().handlerUrl(url);
         }
-        return false;
+        return url;
     }
 }

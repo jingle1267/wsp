@@ -1,6 +1,6 @@
 package com.ihongqiqu.webactivity.intercepter;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
@@ -13,19 +13,19 @@ import android.support.annotation.NonNull;
 
 public class OriginUrlHandler extends UrlHandler {
 
-    public OriginUrlHandler(Context context) {
+    public OriginUrlHandler(Activity context) {
         super(context);
     }
 
     @Override
-    public boolean handlerUrl(@NonNull String url) {
+    public String handlerUrl(@NonNull String url) {
         if (url.toLowerCase().startsWith("http")) {
             return super.handlerUrl(url);
         } else {
             // Otherwise allow the OS to handle things like tel, mailto, etc.
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             mContext.startActivity(intent);
-            return true;
+            return null;
         }
     }
 
