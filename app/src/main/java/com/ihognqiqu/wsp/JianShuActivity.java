@@ -43,13 +43,10 @@ public class JianShuActivity extends AppCompatActivity {
         String keyword = "";
         int page = 1;
 
+        keyword = etKeyword.getText().toString();
         if (TextUtils.isEmpty(keyword)) {
             Toast.makeText(this, "关键字不能为空!", Toast.LENGTH_SHORT).show();
             return;
-        }
-
-        if (!TextUtils.isEmpty(keyword)) {
-            keyword = etKeyword.getText().toString();
         }
 
         if (!TextUtils.isEmpty(etPage.getText().toString())) {

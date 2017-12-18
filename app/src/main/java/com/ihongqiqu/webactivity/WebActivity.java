@@ -41,17 +41,17 @@ public class WebActivity extends AppCompatActivity implements WebFragment.OnWebV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
 
-        mProgressBar = findViewById(R.id.pb_web);
-        String url = getIntent().getStringExtra("url");
-        String title = getIntent().getStringExtra("title");
-
-        setTitle(title);
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
+        mProgressBar = findViewById(R.id.pb_web);
+        String url = getIntent().getStringExtra("url");
+        String title = getIntent().getStringExtra("title");
+
+        setTitle(title);
 
         mWebFragment = WebFragment.newInstance(url);
         mWebFragment.setListener(this);
