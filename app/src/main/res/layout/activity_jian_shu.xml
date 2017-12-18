@@ -47,6 +47,16 @@
         android:onClick="onClickJianshu"
         android:text="开始轰炸" />
 
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="轰炸结果"
+        android:textSize="16sp"
+        />
+
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"

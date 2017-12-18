@@ -28,7 +28,7 @@ public class JianShuFacade {
      * @param keywowrd  关键字
      * @param pageTotal 总页数
      */
-    public void autoCommment(String keywowrd, int pageTotal) {
+    public String autoCommment(String keywowrd, int pageTotal) {
 
         int totalCount = 0;
         int successCount = 0;
@@ -48,8 +48,8 @@ public class JianShuFacade {
                     successCount++;
                 }
                 try {
-                    long sleepSecond = new Random().nextInt(8000);
-                    Thread.sleep(2000 + sleepSecond);
+                    long sleepSecond = new Random().nextInt(4000);
+                    Thread.sleep(4000 + sleepSecond);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -58,9 +58,10 @@ public class JianShuFacade {
             Log.d("JianShuFacade", msg);
         }
 
-        String msg = "successCount/totalCount : " + successCount + "/" + totalCount + "  " + (successCount * 100 / totalCount) + "%";
+        String msg = "success/total : " + successCount + "/" + totalCount + "  " + (successCount * 100 / totalCount) + "%";
         Log.d("JianShuFacade", msg);
 
+        return msg;
     }
 
 }
