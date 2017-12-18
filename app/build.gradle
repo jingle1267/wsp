@@ -27,6 +27,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.github.jingle1267:AndroidKeyValue:1.0.4'
 //    implementation 'us.codecraft:webmagic-core:0.7.3'
 //    implementation 'us.codecraft:webmagic-extension:0.7.3'
     implementation 'com.squareup.okhttp3:okhttp:3.7.0'

@@ -3,7 +3,6 @@ package com.ihognqiqu.wsp.target.jianshu;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import com.google.gson.Gson;
-import com.ihognqiqu.wsp.BuildConfig;
 import com.ihognqiqu.wsp.common.OkHttpClientUtil;
 import com.ihognqiqu.wsp.target.jianshu.entity.JSArticleEntity;
 import com.ihognqiqu.wsp.target.jianshu.entity.JSResultEntity;
@@ -38,7 +37,7 @@ public class JSSearch {
             ResponseBody body = response.body();
             String result = body.string();
 
-            if (BuildConfig.DEBUG) Log.d("JSSearch", "result: " + result);
+            Log.d("JSSearch", "result: " + result);
 
             JSResultEntity jsResultEntity = new Gson().fromJson(result, JSResultEntity.class);
             if (jsResultEntity != null && jsResultEntity.getEntries() != null) {

@@ -5,8 +5,12 @@
 
     <item
         android:id="@+id/action_add"
-        android:icon="@mipmap/ic_launcher_round"
         android:title="ADD"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_save"
+        android:title="SAVE"
         app:showAsAction="always" />
 
 </menu>

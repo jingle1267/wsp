@@ -27,6 +27,8 @@ public class JSComment {
 
     public boolean comment(JSArticleEntity jsArticleEntity, Comment comment) {
 
+        jsArticleEntity.setContent(jsArticleEntity.getContent().replace("<em class='search-result-highlight'>", "").replace("</em>", ""));
+
         JSCommentEntity commentEntity = new JSCommentEntity();
         commentEntity.setContent(jsArticleEntity.getContent() + " - " + comment.getCommentContent());
         commentEntity.setParent_id(null);

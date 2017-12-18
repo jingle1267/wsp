@@ -12,6 +12,7 @@ public interface JSConstants {
      * 搜索
      */
     String JSSearchURL = "http://www.jianshu.com/search/do?q=%s&type=note&page=%d&order_by=default";
+    String JSSearchH5URL = "http://www.jianshu.com/search?q=%s&page=%d&type=note";
 
     /**
      * 评论

@@ -12,7 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+import com.ihognqiqu.kv.KeyValueUtil;
 import com.ihognqiqu.wsp.R;
+import com.ihognqiqu.wsp.common.CopyOfStringUtil;
+import com.ihognqiqu.wsp.target.jianshu.JSCommon;
 
 public class WebActivity extends AppCompatActivity implements WebFragment.OnWebViewChangeListener {
 
@@ -88,6 +91,12 @@ public class WebActivity extends AppCompatActivity implements WebFragment.OnWebV
         switch (item.getItemId()) {
             case R.id.action_add:
                 Toast.makeText(this, "Compose", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.action_save:
+                String value = CopyOfStringUtil.map2str(JSCommon.getHeaders("", 1));
+                KeyValueUtil.insertOrUpdate("jscookie", value);
+                Toast.makeText(this, "Save Success!", Toast.LENGTH_SHORT).show();
+                finish();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
